@@ -57,7 +57,7 @@ class ReportGenerator:
             by_severity.setdefault(sev, []).append(iss)
         for sev in ("high", "medium", "low"):
             items = by_severity.get(sev, [])
-            icon = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(sev, "")
+            icon = {"high": "[HIGH]", "medium": "[MED]", "low": "[LOW]"}.get(sev, "")
             lines.append(f"### {icon} {sev.upper()} 严重度 — {len(items)} 项")
             for item in items:
                 if hasattr(item, "file"):
